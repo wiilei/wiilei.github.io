@@ -1,0 +1,5 @@
+# update git submodule update --remote --merge
+[submodule "themes/PaperMod"]
+	path = themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod.git
+
