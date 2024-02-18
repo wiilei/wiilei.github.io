@@ -1,0 +1,181 @@
+#https://gohugo.io/getting-started/configuration/
+baseURL = "https://wiilei.github.io/"
+title = "百分百全麦"
+#https://gohugo.io/getting-started/configuration/#configure-title-case
+titleCaseStyle = 'ap'
+theme = ["PaperMod"]
+#允许内联短代码
+enableInlineShortcodes = true
+#允许robots.txt
+enableRobotsTXT = true
+#是否发布草稿页面
+buildDrafts = false
+#是否发布未来日期的页面
+buildFuture = false
+#是否发布过期页面
+buildExpired = false
+#允许emoji
+enableEmoji = true
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+#返回站点配置中定义的主要部分名称的切片，如果找不到则返回具有最多页面的顶级部分。
+mainsections = ["posts", "papermod"]
+languageCode = "zh-Hans-CN"
+defaultContentLanguage = "zh"
+#如果为 true，则自动检测内容中的中文/日文/韩文字符，并将其视为 CJK（中日韩）语言。这会影响一些渲染行为，例如自动换行。
+hasCJKLanguage = true
+
+#构建时，从静态目录中找不到的目标中删除文件
+cleanDestinationDir = true
+archetypeDir = "archetypes"
+assetDir = "assets"
+contentDir = "content"
+dataDir = "data"
+publishDir = "public"
+themesDir = "themes"
+
+#禁用链接别名
+disableAliases = false
+#禁用头部meta标记(hugo)
+disableHugoGeneratorInject = false
+#禁用指定页面类型的渲染
+disableKinds = []
+#禁用浏览器窗口的自动实时重新加载
+disableLiveReload = false
+#禁用url/path 转换为小写
+disablePathToLower = false
+#是否以内容文件的最后一次 git 提交日期更新每个页面的 Lastmod 参数
+enableGitInfo = false
+#如果缺少翻译，则显示空字符串
+enableMissingTranslationPlaceholders = false
+#分页每页20条，路径/page
+paginate = 20
+paginatePath = "page"
+#列表中的标题采用复数形式
+pluralizeListTitles = true
+#摘要长度
+summaryLength = 120
+timeout = '30s'
+timeZone = 'Asia/Shanghai'
+
+#https://gohugo.io/content-management/image-processing/#imaging-configuration
+[imaging]
+resampleFilter = 'MitchellNetravali'
+
+[imaging.exif]
+#禁用图片创建时间和经纬度
+disableDate = false
+disableLatLong = false
+
+#https://gohugo.io/getting-started/configuration/#configure-minify
+[minify]
+disableCSS = false
+disableHTML = false
+disableJS = false
+disableJSON = false
+disableSVG = false
+disableXML = false
+minifyOutput = false
+
+#https://gohugo.io/getting-started/configuration-markup/
+[markup]
+defaultMarkdownHandler = 'goldmark'
+
+#https://gohugo.io/templates/output-formats/#media-types
+[outputs]
+home = ['html', 'rss', 'robots', 'sitemap']
+page = ['html']
+rss = ['rss']
+section = ['html', 'rss']
+taxonomy = ['html', 'rss']
+term = ['html', 'rss']
+
+#https://gohugo.io/content-management/taxonomies/
+[taxonomies]
+category = 'categories'
+tag = 'tags'
+series = 'series'
+
+title = "百分百全麦"
+#https://gohugo.io/getting-started/configuration/#configure-title-case
+titleCaseStyle = 'ap'
+
+[params]
+env = "production"
+description = "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
+author = "Theme PaperMod"
+defaultTheme = "auto"
+ShowShareButtons = true
+ShowReadingTime = true
+displayFullLangName = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowRssButtonInSectionTermList = true
+ShowAllPagesInArchive = true
+ShowPageNums = true
+ShowToc = true
+images = ["images/papermod-cover.png"]
+
+[params.profileMode]
+enabled = false
+title = "PaperMod"
+imageUrl = "#"
+imageTitle = "my image"
+
+[[params.profileMode.buttons]]
+name = "Archives"
+url = "archives"
+
+[[params.profileMode.buttons]]
+name = "Tags"
+url = "tags"
+
+[params.homeInfoParams]
+Title = "PaperMod's Demo"
+Content = """
+👋 Welcome to demo page of Hugo's theme PaperMod!
+- **PaperMod**  is designed to be clean and simple but fast and responsive theme with useful feature-set that enhances UX.
+- Feel free to show your support by giving us a star 🌟 on GitHub and sharing with your friends and social media .
+- PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper/tree/4330c8b12aa48bfdecbcad6ad66145f679a430b3).
+"""
+
+[[params.socialIcons]]
+name = "github"
+title = "View Source on Github"
+url = "https://github.com/adityatelange/hugo-PaperMod"
+
+[[params.socialIcons]]
+name = "Discord"
+title = "Join discord community"
+url = "https://discord.gg/ahpmTvhVmp"
+
+[[params.socialIcons]]
+name = "X"
+title = "Share PaperMod on X/Twitter"
+url = "https://x.com/intent/tweet/?text=Checkout%20Hugo%20PaperMod%20%E2%9C%A8%0AA%20fast,%20clean,%20responsive%20Hugo%20theme.&url=https://github.com/adityatelange/hugo-PaperMod&hashtags=Hugo,PaperMod"
+
+[[params.socialIcons]]
+name = "KoFi"
+title = "Buy me a Ko-Fi :)"
+url = "https://ko-fi.com/adityatelange"
+
+[params.editPost]
+URL = "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
+Text = "Suggest Changes"
+appendFilePath = true
+
+[params.assets]
+disableHLJS = true
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+noClasses = false
+
+[services.instagram]
+disableInlineCSS = true
+
+[services.twitter]
+disableInlineCSS = true
