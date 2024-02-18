@@ -1,5 +1,6 @@
----
-title: "Search"
-placeholder: Search demo site with full text fuzzy search ...
-layout: "search"
----
++++
+title = "🔍 搜索"
+layout = "search"
+summary = "search"
+placeholder = "搜索框内的默认显示"
++++

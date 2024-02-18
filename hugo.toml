@@ -22,6 +22,7 @@ pygmentsCodeFences = true
 mainsections = ["posts", "papermod"]
 languageCode = "zh-Hans-CN"
 defaultContentLanguage = "zh"
+#defaultContentLanguageInSubdir = true
 #如果为 true，则自动检测内容中的中文/日文/韩文字符，并将其视为 CJK（中日韩）语言。这会影响一些渲染行为，例如自动换行。
 hasCJKLanguage = true
 
@@ -81,6 +82,17 @@ minifyOutput = false
 [markup]
 defaultMarkdownHandler = 'goldmark'
 
+[markup.goldmark.renderer]
+#如果你想在 Markdown 文件中使用 HTML 代码，可以设置该参数为 true
+unsafe = true
+
+[markup.highlight]
+noClasses = false
+codeFences = true
+guessSyntax = true
+lineNos = true
+style = 'darcula'
+
 #https://gohugo.io/templates/output-formats/#media-types
 [outputs]
 home = ['html', 'rss', 'robots', 'sitemap']
@@ -95,10 +107,6 @@ term = ['html', 'rss']
 category = 'categories'
 tag = 'tags'
 series = 'series'
-
-title = "百分百全麦"
-#https://gohugo.io/getting-started/configuration/#configure-title-case
-titleCaseStyle = 'ap'
 
 [params]
 env = "production"
@@ -168,14 +176,25 @@ appendFilePath = true
 [params.assets]
 disableHLJS = true
 
-[markup.goldmark.renderer]
-unsafe = true
-
-[markup.highlight]
-noClasses = false
-
 [services.instagram]
 disableInlineCSS = true
 
 [services.twitter]
 disableInlineCSS = true
+
+[privacy.vimeo]
+disabled = false
+simple = true
+
+[privacy.twitter]
+disabled = false
+enableDNT = true
+simple = true
+
+[privacy.instagram]
+disabled = false
+simple = true
+
+[privacy.youtube]
+disabled = false
+privacyEnhanced = true
