@@ -81,45 +81,45 @@ disableXML = true
 minifyOutput = true
 
 [menus]
-[[menus.main]]
-name = '🔍 搜索'
-pageRef = '/search'
-weight = 9
+#[[menus.main]]
+#name = '🔍 搜索'
+#pageRef = '/search'
+#weight = 9
 
 [[menus.main]]
 name = '🏚️ 主页'
 pageRef = '/'
 weight = 10
 
-[[menus.main]]
-name = '📝 文章'
-pageRef = '/posts'
-weight = 20
+#[[menus.main]]
+#name = '📝 文章'
+#pageRef = '/posts'
+#weight = 20
 
-[[menus.main]]
-name = '📂 分类'
-pageRef = '/categories'
-weight = 30
+#[[menus.main]]
+#name = '📂 分类'
+#pageRef = '/categories'
+#weight = 30
 
-[[menus.main]]
-name = '📚 系列'
-pageRef = '/series'
-weight = 40
+#[[menus.main]]
+#name = '📚 系列'
+#pageRef = '/series'
+#weight = 40
 
-[[menus.main]]
-name = '🏷️ 标签'
-pageRef = '/tags'
-weight = 50
+#[[menus.main]]
+#name = '🏷️ 标签'
+#pageRef = '/tags'
+#weight = 50
 
-[[menus.main]]
-name = '⏱️ 时间轴'
-pageRef = '/archives'
-weight = 55
+#[[menus.main]]
+#name = '⏱️ 时间轴'
+#pageRef = '/archives'
+#weight = 55
 
-[[menus.main]]
-name = '❔ 关于'
-pageRef = '/about'
-weight = 999
+#[[menus.main]]
+#name = '❔ 关于'
+#pageRef = '/about'
+#weight = 999
 
 #https://gohugo.io/getting-started/configuration-markup/
 [markup]
