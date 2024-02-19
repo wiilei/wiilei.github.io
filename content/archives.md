@@ -1,7 +1,7 @@
 +++
-title = "⏱ 时间轴"
+title = "⏱️时间轴"
 layout = "archives"
-url = "/archives/"
+url = "/archives"
 summary = "archives"
 +++
 

@@ -19,7 +19,7 @@ enableEmoji = true
 pygmentsUseClasses = true
 pygmentsCodeFences = true
 #返回站点配置中定义的主要部分名称的切片，如果找不到则返回具有最多页面的顶级部分。
-mainsections = ["posts", "papermod"]
+mainsections = ["posts"]
 languageCode = "zh-Hans-CN"
 defaultContentLanguage = "zh"
 #defaultContentLanguageInSubdir = true
@@ -58,6 +58,8 @@ pluralizeListTitles = true
 summaryLength = 120
 timeout = '30s'
 timeZone = 'Asia/Shanghai'
+#https://gohugo.io/content-management/menus/#define-automatically
+#sectionPagesMenu = 'main'
 
 #https://gohugo.io/content-management/image-processing/#imaging-configuration
 [imaging]
@@ -75,8 +77,49 @@ disableHTML = false
 disableJS = false
 disableJSON = false
 disableSVG = false
-disableXML = false
-minifyOutput = false
+disableXML = true
+minifyOutput = true
+
+[menus]
+[[menus.main]]
+name = '🔍 搜索'
+pageRef = '/search'
+weight = 9
+
+[[menus.main]]
+name = '🏚️ 主页'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = '📝 文章'
+pageRef = '/posts'
+weight = 20
+
+[[menus.main]]
+name = '📂 分类'
+pageRef = '/categories'
+weight = 30
+
+[[menus.main]]
+name = '📚 系列'
+pageRef = '/series'
+weight = 40
+
+[[menus.main]]
+name = '🏷️ 标签'
+pageRef = '/tags'
+weight = 50
+
+[[menus.main]]
+name = '⏱️ 时间轴'
+pageRef = '/archives'
+weight = 55
+
+[[menus.main]]
+name = '❔ 关于'
+pageRef = '/about'
+weight = 999
 
 #https://gohugo.io/getting-started/configuration-markup/
 [markup]
@@ -87,6 +130,7 @@ defaultMarkdownHandler = 'goldmark'
 unsafe = true
 
 [markup.highlight]
+anchorLineNos = true
 noClasses = false
 codeFences = true
 guessSyntax = true
@@ -95,7 +139,7 @@ style = 'darcula'
 
 #https://gohugo.io/templates/output-formats/#media-types
 [outputs]
-home = ['html', 'rss', 'robots', 'sitemap']
+home = ['html', 'rss', 'robots', 'sitemap', 'json']
 page = ['html']
 rss = ['rss']
 section = ['html', 'rss']
@@ -105,76 +149,148 @@ term = ['html', 'rss']
 #https://gohugo.io/content-management/taxonomies/
 [taxonomies]
 category = 'categories'
-tag = 'tags'
 series = 'series'
+tag = 'tags'
 
 [params]
 env = "production"
-description = "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
-author = "Theme PaperMod"
-defaultTheme = "auto"
-ShowShareButtons = true
+description = "百分百全麦"
+author = "Me"
+title = "百分百全麦"
+languageAltTitle = "百分百全麦"
+keywords = ["Blog", "百分百全麦", "wiilei"]
+#images = ["images/papermod-cover.png"]
+#日期格式
+DateFormat = "2006-01-02"
+#默认主题
+defaultTheme = "light"
+#禁用标签旁边显示的主题切换图标
+disableThemeToggle = true
+#禁用第一篇文章的特殊样式
+disableSpecial1stPost = true
+#禁用滚动到顶部
+disableScrollToTop = false
+
+#展示阅读时间
 ShowReadingTime = true
-displayFullLangName = true
-ShowPostNavLinks = true
-ShowBreadCrumbs = true
+#展示分享按钮
+ShowShareButtons = false
+#展示代码复制按钮
 ShowCodeCopyButtons = true
+#展示全文RSS
+ShowFullTextinRSS = true
+#展示目录
+showtoc = true
+#展示文章导航
+ShowPostNavLinks = true
+#展示面包屑
+ShowBreadCrumbs = false
+#展示文章字数
+ShowWordCount = true
+#在“节”、“术语”和“列表”页面中显示 RSS 图标
 ShowRssButtonInSectionTermList = true
+#展示所有页面
 ShowAllPagesInArchive = true
-ShowPageNums = true
-ShowToc = true
-images = ["images/papermod-cover.png"]
+#展示最后修改时间
+ShowLastMod = true
+#自动展开目录
+TocOpen = true
+#使用 Hugo 的默认 Toc 而不是模板的 Toc
+UseHugoToc = false
+#展示评论
+comments = false
+#隐藏元元素：页面的日期、阅读时间、作者和可用翻译
+hidemeta = false
+#隐藏摘要
+hideSummary = false
+#禁用锚定标题
+disableAnchoredHeadings = false
+#隐藏页脚
+hideFooter = false
+#在语言切换标头中显示 languageName 的语言全名
+displayFullLangName = false
 
-[params.profileMode]
-enabled = false
-title = "PaperMod"
-imageUrl = "#"
-imageTitle = "my image"
-
-[[params.profileMode.buttons]]
-name = "Archives"
-url = "archives"
-
-[[params.profileMode.buttons]]
-name = "Tags"
-url = "tags"
-
-[params.homeInfoParams]
-Title = "PaperMod's Demo"
-Content = """
-👋 Welcome to demo page of Hugo's theme PaperMod!
-- **PaperMod**  is designed to be clean and simple but fast and responsive theme with useful feature-set that enhances UX.
-- Feel free to show your support by giving us a star 🌟 on GitHub and sharing with your friends and social media .
-- PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper/tree/4330c8b12aa48bfdecbcad6ad66145f679a430b3).
-"""
-
-[[params.socialIcons]]
-name = "github"
-title = "View Source on Github"
-url = "https://github.com/adityatelange/hugo-PaperMod"
-
-[[params.socialIcons]]
-name = "Discord"
-title = "Join discord community"
-url = "https://discord.gg/ahpmTvhVmp"
-
-[[params.socialIcons]]
-name = "X"
-title = "Share PaperMod on X/Twitter"
-url = "https://x.com/intent/tweet/?text=Checkout%20Hugo%20PaperMod%20%E2%9C%A8%0AA%20fast,%20clean,%20responsive%20Hugo%20theme.&url=https://github.com/adityatelange/hugo-PaperMod&hashtags=Hugo,PaperMod"
-
-[[params.socialIcons]]
-name = "KoFi"
-title = "Buy me a Ko-Fi :)"
-url = "https://ko-fi.com/adityatelange"
-
-[params.editPost]
-URL = "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
-Text = "Suggest Changes"
-appendFilePath = true
+[params.label]
+text = "百分百全麦"
+#icon = "/apple-touch-icon.png"
+#iconHeight = 35
 
 [params.assets]
-disableHLJS = true
+disableHLJS = false
+disableFingerprinting = false
+#favicon = "<link / abs url>"
+#favicon16x16 = "<link / abs url>"
+#favicon32x32 = "<link / abs url>"
+#apple_touch_icon = "<link / abs url>"
+#safari_pinned_tab = "<link / abs url>"
+#theme_color
+#msapplication_TileColor
+
+[params.schema]
+publisherType = 'Person'
+
+#https://fusejs.io/api/options.html
+#模糊搜索
+[params.fuseOpts]
+#是否区分大小写
+isCaseSensitive = false
+#是否按分数对结果列表进行排序
+shouldSort = true
+#确定预期在文本中找到的模式的大概位置
+location = 0
+#确定在模式的起始位置之前允许的最大距离
+distance = 1_000
+#0需要完全匹配（字母和位置），1将匹配任何内容
+threshold = 0.4
+#仅返回长度超过此值的匹配项
+minMatchCharLength = 0
+#搜索结果的最大数量
+limit = 10
+keys = ["title", "permalink", "summary", "content"]
+
+#封面图片
+[params.cover]
+#要打开全尺寸封面图片，请单击封面
+linkFullImages = true
+#启用/禁用响应式封面图像的生成
+responsiveImages = true
+#隐藏在任何地方，但不隐藏在结构化数据中
+hidden = false
+#hide on list pages and home
+hiddenInList = false
+#hide on single page
+hiddenInSingle = false
+
+#[params.profileMode]
+#enabled = false
+#title = "PaperMod"
+#subtitle = "A Hugo theme for bloggers"
+#imageUrl = "image.png"
+#imageTitle = "my image"
+#imageWidth = 100
+#imageHeight = 100
+#
+#[[params.profileMode.buttons]]
+#name = "Archives"
+#url = "/archives"
+#
+#[[params.profileMode.buttons]]
+#name = "Tags"
+#url = "/tags"
+
+#[params.homeInfoParams]
+#Title = ""
+#Content = """
+#👋 Welcome to demo page of Hugo's theme PaperMod!
+#- **PaperMod**  is designed to be clean and simple but fast and responsive theme with useful feature-set that enhances UX.
+#- Feel free to show your support by giving us a star 🌟 on GitHub and sharing with your friends and social media .
+#- PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper/tree/4330c8b12aa48bfdecbcad6ad66145f679a430b3).
+#"""
+
+#[params.editPost]
+#URL = "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
+#Text = "Suggest Changes"
+#appendFilePath = true
 
 [services.instagram]
 disableInlineCSS = true
@@ -182,19 +298,30 @@ disableInlineCSS = true
 [services.twitter]
 disableInlineCSS = true
 
-[privacy.vimeo]
-disabled = false
+[privacy]
+[privacy.disqus]
+disable = true
+
+[privacy.googleAnalytics]
+disable = true
+anonymizeIP = true
+respectDoNotTrack = true
+useSessionStorage = true
+
+[privacy.instagram]
+disable = true
 simple = true
 
 [privacy.twitter]
-disabled = false
+disable = true
 enableDNT = true
 simple = true
 
-[privacy.instagram]
-disabled = false
+[privacy.vimeo]
+disable = true
+enableDNT = true
 simple = true
 
 [privacy.youtube]
-disabled = false
+disable = true
 privacyEnhanced = true
